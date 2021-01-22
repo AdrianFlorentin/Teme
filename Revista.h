@@ -4,19 +4,16 @@
 
 #ifndef PROIECTE_IN_CLION_REVISTA_H
 #define PROIECTE_IN_CLION_REVISTA_H
-
 #include <iostream>
 #include <string>
 #include "Articol.h"
-
-class revista : private articol {
+class revista: public articol
+{
 protected:
     std::string editura;
     int limita_de_varsta;
     bool integrame;
-
     friend class cumparator;
-
 public:
 
     int getLimitaDeVarsta() const;
@@ -26,8 +23,14 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const revista &revista);
 
-    std::string getEditura() {
+    std::string getEditura(){
         return editura;
+    }
+
+    ~revista() override =default;
+
+    void afisare() override {
+        std::cout<<"Editura: "<<editura;
     }
 };
 

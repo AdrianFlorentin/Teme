@@ -4,12 +4,10 @@
 
 #ifndef PROIECTE_IN_CLION_CARTE_H
 #define PROIECTE_IN_CLION_CARTE_H
-
 #include <iostream>
 #include "Articol.h"
 #include <string>
-
-class carte : private articol {
+class carte:private articol {
 protected:
     std::string autor;
     bool poze;

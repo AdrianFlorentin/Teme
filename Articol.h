@@ -4,28 +4,34 @@
 
 #ifndef PROIECTE_IN_CLION_ARTICOL_H
 #define PROIECTE_IN_CLION_ARTICOL_H
-
 #include <iostream>
 #include <string>
-
-class articol {
+class articol
+{
 protected:
     std::string titlu;
     int pret;
     std::string categorie;
-
     friend class cumparator;
-
 public:
+
     virtual const std::string &getTitlu() const;
 
     articol(const std::string &titlu, int pret, const std::string &categorie);
 
     friend std::ostream &operator<<(std::ostream &os, const articol &articol);
 
-    int getPret() {
+    int getPret()
+    {
         return pret;
     }
-};
 
+    virtual ~articol()=default;
+
+    virtual void afisare(){
+        std::cout<<"Titlu: "<<titlu<<std::endl;
+    }
+
+
+};
 #endif //PROIECTE_IN_CLION_ARTICOL_H

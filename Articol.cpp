@@ -15,3 +15,4 @@ std::ostream &operator<<(std::ostream &os, const articol &articol) {
 const std::string &articol::getTitlu() const {
     return titlu;
 }
+
